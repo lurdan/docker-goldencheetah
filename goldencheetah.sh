@@ -1,11 +1,14 @@
 #!/bin/sh
 
+[ -f /dev/snd ] && SOUND="--device /dev/snd"
+[ -f /dev/ttyUSB0 ] && USB="--device /dev/ttyUSB0"
+[ -d $HOME/.goldencheetah ] && CONFDIR="-v $HOME/.goldencheetah:$HOME/.goldencheetah"
+
 docker run -it \
        --user=$USER \
-       --env="DISPLAY" \
        --env="DISPLAY=unix$DISPLAY" \
        --volume="/home/$USER:/home/$USER" \
-       --volume=$HOME/.goldencheetah/:$HOME/.goldencheetah \
+       $COONFDIR \
        --volume="/etc/group:/etc/group:ro" \
        --volume="/etc/passwd:/etc/passwd:ro" \
        --volume="/etc/shadow:/etc/shadow:ro" \
@@ -13,7 +16,7 @@ docker run -it \
        --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
        --volume="/dev/shm:/dev/shm" \
        --name goldencheetah \
-       --device /dev/snd \
-       --device /dev/ttyUSB0 \
+       $SOUND \
+       $USB \
        lurdan/goldencheetah
 
