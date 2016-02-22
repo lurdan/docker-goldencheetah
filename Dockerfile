@@ -6,5 +6,5 @@ MAINTAINER KURASHIKI Satoru <lurdan@gmail.com>
 WORKDIR "$HOME"
 RUN apt update && apt install -y goldencheetah && apt-get clean
 
-ENTRYPOINT [ "Goldencheetah" ]
+ENTRYPOINT [ "GoldenCheetah" ]
 

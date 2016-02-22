@@ -4,7 +4,7 @@
 [ -f /dev/ttyUSB0 ] && USB="--device /dev/ttyUSB0"
 [ -d $HOME/.goldencheetah ] && CONFDIR="-v $HOME/.goldencheetah:$HOME/.goldencheetah"
 
-docker run -it \
+docker run -it --rm \
        --user=$USER \
        --env="DISPLAY=unix$DISPLAY" \
        --volume="/home/$USER:/home/$USER" \
