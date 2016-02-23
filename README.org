@@ -1,0 +1,12 @@
+* docker-goldencheetah
+
+runs goldencheetah (packaged for debian sid)
+
+** Usage
+
+#+BEGIN_SRC sh
+docker build -t lurdan/goldencheetah .
+vi goldencheetah.sh (tweak your preference)
+./goldencheetah.sh
+#+END_SRC
+
