@@ -6,7 +6,6 @@
 
 docker run -it --rm \
        --user=$USER \
-       --env="DISPLAY=unix$DISPLAY" \
        --volume="/home/$USER:/home/$USER" \
        $COONFDIR \
        --volume="/etc/group:/etc/group:ro" \
@@ -18,5 +17,5 @@ docker run -it --rm \
        --name goldencheetah \
        $SOUND \
        $USB \
-       lurdan/goldencheetah
-
+       lurdan/goldencheetah bash
+       #--env="DISPLAY=$DISPLAY" \

@@ -1,12 +1,29 @@
 * docker-goldencheetah
 
-runs goldencheetah (packaged for debian sid)
+docker environment to play with goldencheetah debian package.
 
 ** Usage
 
+*** Run goldencheetah (debian sid package)
+
 #+BEGIN_SRC sh
-docker build -t lurdan/goldencheetah .
+docker pull lurdan/goldencheetah:latest
 vi goldencheetah.sh (tweak your preference)
 ./goldencheetah.sh
+#+END_SRC
+
+*** Run goldencheetah (repository HEAD)
+
+#+BEGIN_SRC sh
+docker pull lurdan/goldencheetah:head
+vi goldencheetah.sh (tweak your preference)
+./goldencheetah.sh
+#+END_SRC
+
+*** Build goldencheetah (repository HEAD)
+
+#+BEGIN_SRC sh
+git checkout source-build
+docker build -t lurdan/goldencheetah:head .
 #+END_SRC
 
