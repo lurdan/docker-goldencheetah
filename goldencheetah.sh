@@ -18,5 +18,5 @@ docker run -it \
        --name goldencheetah \
        $SOUND \
        $USB \
-       lurdan/goldencheetah
+       lurdan/goldencheetah:head
 
