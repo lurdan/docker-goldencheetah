@@ -14,16 +14,13 @@ vi goldencheetah.sh (tweak your preference)
 
 *** Run goldencheetah (repository HEAD)
 
+Run twice build subcommand. (build, and run)
+
 #+BEGIN_SRC sh
 docker pull lurdan/goldencheetah:head
-vi goldencheetah.sh (tweak your preference)
-./goldencheetah.sh
-#+END_SRC
-
-*** Build goldencheetah (repository HEAD)
-
-#+BEGIN_SRC sh
 git checkout source-build
-docker build -t lurdan/goldencheetah:head .
+vi goldencheetah.sh (tweak your preference)
+./goldencheetah.sh build
+./goldencheetah.sh build
 #+END_SRC
 
